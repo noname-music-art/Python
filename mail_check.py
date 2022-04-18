@@ -9,7 +9,7 @@ elif mail[1] not in free_post:
     if "." not in mail[1]:
         print("Это не почта")
     mail = mail[1].split(".")
-    if not mail[0] and not mail[1]:
+    if not mail[0] or not mail[1]:
         print("Это не почта")
     elif 1 < len(mail[1]) <= 3:
         print("Это корпоративная почта")
