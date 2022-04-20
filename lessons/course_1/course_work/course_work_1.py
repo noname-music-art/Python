@@ -8,7 +8,7 @@ def morse_encode(word):
     """
     English word to Morse code encoding function
 
-    :param: word - word to encoding
+    :param word: - word to encoding
     :return: str - encoded word
     """
 
@@ -33,7 +33,7 @@ def get_word(word_list):
     """
     The function of choosing a random word from a list of words
 
-    :param: word_list - list of words to choose from
+    :param word_list: list of words to choose from
     :return: str - randomly chosen word
     """
 
@@ -45,7 +45,7 @@ def print_statistics(answers):
     The function counts and print the number of elements of the list,
     the number of elements True, the number of elements False
 
-    :param answers: boolean list
+    :param answers: - boolean list
     """
 
     correct_answers = 0
