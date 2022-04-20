@@ -24,4 +24,4 @@ def morse_code_to_word(code):
             if char == v:
                 code_list += [k]
 
-    print(" ".join(code_list))
+    return " ".join(code_list)
