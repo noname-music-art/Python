@@ -9,7 +9,3 @@ def phone_numer_replace(user_text):
     cleaned_text = ["***" if splited_text.isdigit() else splited_text for splited_text in splited_text]
 
     print(' '.join(cleaned_text))
-
-
-text = input()
-phone_numer_replace(text)
