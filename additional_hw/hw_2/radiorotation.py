@@ -1,7 +1,7 @@
 track_list = ("Galibri & Mavik – Федерико Феллини", "DaBro - На Часах Ноль-Ноль",
               "Dead Blonde – Мальчик На Девятке", "Султан Лагучев - Горький Вкус",
               "NK – Красное Вино", "Dead Blonde - Бесприданница",
-              "Клава Кока & Руки Вверх - Нокаут","Minelli - Rampampam",
+              "Клава Кока & Руки Вверх - Нокаут", "Minelli - Rampampam",
               "Хабиб feat. DJ Smash - Беги", "Асия & Аня Pokrov - Любовь С Картинки",
               "Артём Пивоваров - Рандеву", "Хабиб - Грустинка",
               "Konfuz - Ратата", "Amri - Звезда Тик-Ток", "Konfuz - Ратата", "Amri - Звезда Тик-Ток",
@@ -16,4 +16,5 @@ for song in track_list:
     else:
         played_songs[song] += 1
 
-print(played_songs)
+for key, value in played_songs.items():
+    print('{}: {}'.format(key, value))
