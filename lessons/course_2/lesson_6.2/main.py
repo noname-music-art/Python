@@ -1,14 +1,5 @@
 import random
 
-
-def read_data_from_file():
-    pass
-
-
-def write_data_to_file():
-    pass
-
-
 user = input("Enter your name : ")
 
 with open("words.txt") as file:

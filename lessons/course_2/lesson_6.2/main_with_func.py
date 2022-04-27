@@ -1,25 +1,30 @@
 import random
 
 
-def get_data_from_file(file_name, args="rt"):
-
-    with open(file_name) as file:
+def get_data_from_file(file_name):
+    with open(file_name, "rt") as file:
         content = file.read().split("\n")
     return content
 
 
-def write_data_to_file():
-    pass
+def store_score(user, score):
+    with open("history.txt", "at") as file:
+        file.write(f"{user} {score}\n")
+
+
+def shuffle_word(word):
+    word_sh = list(word)
+    random.shuffle(word_sh)
+    word_sh = "".join(word_sh)
+    return word_sh
 
 
 user = input("Enter your name : ")
 score = 0
 
 for word in get_data_from_file("words.txt"):
-    word_sh = list(word)
-    random.shuffle(word_sh)
-    word_sh = "".join(word_sh)
-    user_answer = input(f"Guess the word: {word_sh} : ")
+
+    user_answer = input(f"Guess the word: {shuffle_word(word)} : ")
 
     if user_answer == word:
         score += 10
@@ -27,8 +32,7 @@ for word in get_data_from_file("words.txt"):
     else:
         print(f"Wrong! Correct answer – {word}\n")
 
-with open("history.txt", "at") as file:
-    file.write(f"{user} {score}\n")
+store_score(user, score)
 
 top_score = []
 played_games = 0
