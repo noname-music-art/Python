@@ -1,8 +1,11 @@
 import random
 
 
-def read_data_from_file():
-    pass
+def get_data_from_file(file_name, args="rt"):
+
+    with open(file_name) as file:
+        content = file.read().split("\n")
+    return content
 
 
 def write_data_to_file():
@@ -10,14 +13,9 @@ def write_data_to_file():
 
 
 user = input("Enter your name : ")
-
-with open("words.txt") as file:
-    content = file.read().split("\n")
-
 score = 0
 
-for word in content:
-
+for word in get_data_from_file("words.txt"):
     word_sh = list(word)
     random.shuffle(word_sh)
     word_sh = "".join(word_sh)
@@ -35,11 +33,14 @@ with open("history.txt", "at") as file:
 top_score = []
 played_games = 0
 
-with open("history.txt") as file:
-    for stored_data in file:
-        played_games += 1
-        players, scores = stored_data.rstrip().split(' ')
+for stored_data in get_data_from_file("history.txt"):
+    if len(stored_data.split(' ')) == 2:
+        players, scores = stored_data.split(' ')
         top_score.append(scores)
+        played_games += 1
+    else:
+        continue
 
 print(f"Total games played: {played_games}")
 print(f"Top score: {max(top_score)}")
+
