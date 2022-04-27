@@ -26,7 +26,7 @@ with open("history.txt", "at") as file:
 top_score = []
 played_games = 0
 
-with open("history.txt", "rt") as file:
+with open("history.txt") as file:
     for stored_data in file:
         played_games += 1
         players, scores = stored_data.rstrip().split(' ')
