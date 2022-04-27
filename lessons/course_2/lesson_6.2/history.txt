@@ -6,3 +6,9 @@ d 0
 vasya 30
 noname 30
 noname 40
+fds 0
+fgh 0
+dsf 0
+test 10
+sdf 0
+sdf 0
