@@ -1,6 +1,6 @@
 import random
 
-user = input("Введите ваше имя : ")
+user = input("Enter your name : ")
 
 with open("words.txt") as file:
     content = file.read().split("\n")
@@ -12,13 +12,13 @@ for word in content:
     word_sh = list(word)
     random.shuffle(word_sh)
     word_sh = "".join(word_sh)
-    user_answer = input(f"Угадайте слово: {word_sh}")
+    user_answer = input(f"Guess the word: {word_sh}")
 
     if user_answer == word:
         score += 10
-        print("Верно! Вы получаете 10 очков.")
+        print("Correct! You earn 10 pts.")
     else:
-        print(f"Неверно! Верный ответ – {word}")
+        print(f"Wrong! Correct answer – {word}")
 
 with open("history.txt", "at") as file:
     print(file.write(f"{user} {score}\n"))
