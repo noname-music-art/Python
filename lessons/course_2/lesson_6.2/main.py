@@ -5,7 +5,6 @@ user = input("Введите ваше имя : ")
 with open("words.txt") as file:
     content = file.read().split("\n")
 
-test = []
 score = 0
 
 for word in content:
@@ -24,5 +23,14 @@ for word in content:
 with open("history.txt", "at") as file:
     print(file.write(f"{user} {score}\n"))
 
-# with open("history.txt") as file:
-#     print()
+top_score = []
+played_games = 0
+
+with open("history.txt", "rt") as file:
+    for stored_data in file:
+        played_games += 1
+        players, scores = stored_data.rstrip().split(' ')
+        top_score.append(scores)
+
+print(f"Total games played: {played_games}")
+print(f"Top score: {max(top_score)}")

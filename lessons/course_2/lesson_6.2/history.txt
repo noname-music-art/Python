@@ -1,5 +1,8 @@
-1234 0
-sadf 0
-2134 0
-2134 0
-1243 0
+123 0
+nnoo 10
+dfg 20
+sad 30
+d 0
+vasya 30
+noname 30
+noname 40
