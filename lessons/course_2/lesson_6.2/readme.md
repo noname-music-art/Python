@@ -1,3 +1,11 @@
+There are two versions of program:
+
+Main.py - version without using functions, a little more compact.
+Main_with_func_v2.py - does the same,a little more longer, but the structure is slightly prettier
+
+words.txt - file with words for program.
+history.txt - file with program statistic.
+
 **Шаг 1.** Создайте файл `words.txt`, где будут храниться английские слова. Например, такой:
 
 ```
