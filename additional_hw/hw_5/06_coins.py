@@ -7,3 +7,9 @@ for coin in sorted(map(int, coins.split(", ")), reverse=True):
     amount -= amount//coin * coin
 
 print(coins_dict)
+
+# def lost_time(*values):
+#   sum = 0
+#   for value in values:
+#     sum += value
+#   return(sum)
