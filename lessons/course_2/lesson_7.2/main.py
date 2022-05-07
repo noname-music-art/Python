@@ -17,7 +17,8 @@ student_name, student_skills = get_student_by_pk(pk)
 print(f"Студент {student_name}\nЗнает: {', '.join(student_skills)}")
 
 # input profession title for check student fitnesse
-title = input(f"Выберите специальность для оценки студента {student_name}\n")
+title = input(f"Введите специальность для оценки студента {student_name} "
+              f"или наберите /help для получения списка доступных специальностей\n")
 
 # get profession skills by title
 profession_skills = get_profession_by_title(title.capitalize())

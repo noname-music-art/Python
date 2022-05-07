@@ -30,8 +30,8 @@ def get_student_by_pk(pk):
     students = load_students()
     for i in range(0, len(students)):
         if pk == students[i]['pk']:
-            student_name = students[pk-1]['full_name']
-            student_skills = students[pk - 1]['skills']
+            student_name = students[i]['full_name']
+            student_skills = students[i]['skills']
             return student_name, student_skills
     print("У нас нет такого студента")
     quit()
@@ -44,7 +44,6 @@ def get_profession_by_title(title):
     :return:
     """
     professions = load_professions()
-
     for i in range(0, len(professions)):
         if title == professions[i]['title']:
             return professions[i]['skills']
