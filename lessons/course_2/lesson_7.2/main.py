@@ -17,8 +17,7 @@ student_name, student_skills = get_student_by_pk(pk)
 print(f"Студент {student_name}\nЗнает: {', '.join(student_skills)}")
 
 # input profession title for check student fitnesse
-title = input(f"Введите специальность для оценки студента {student_name} "
-              f"или наберите /help для получения списка доступных специальностей\n")
+title = input(f"Введите специальность для оценки студента {student_name}\n")
 
 # get profession skills by title
 profession_skills = get_profession_by_title(title.capitalize())
@@ -27,6 +26,12 @@ profession_skills = get_profession_by_title(title.capitalize())
 fitness = check_fitness(student_skills, profession_skills)
 
 # print summary results
-print(f"{int(fitness['fit_percent'])}%\n"
-      f"{student_name} знает {', '.join(fitness['has'])}\n"
-      f"{student_name} не знает {', '.join(fitness['lacks'])}")
+print(f"Пригодность {int(fitness['fit_percent'])}%")
+if not ', '.join(fitness['has']):
+    print(f"{student_name} знает маловато")
+else:
+    print(f"{student_name} знает {', '.join(fitness['has'])}")
+if not ', '.join(fitness['lacks']):
+    print(f"{student_name} не знает что бы ещё выучить")
+else:
+    print(f"{student_name} не знает {', '.join(fitness['lacks'])}")

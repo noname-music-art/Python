@@ -3,8 +3,8 @@ import json
 
 def load_students():
     """
-
-    :return:
+    Load data from students.json
+    :return: strings from students.json
     """
     with open('data/students.json') as f:
         raw_json = f.read()
@@ -13,8 +13,8 @@ def load_students():
 
 def load_professions():
     """
-
-    :return:
+    Load data from professions.json
+    :return: strings from profession.json
     """
     with open('data/professions.json') as f:
         raw_json = f.read()
@@ -23,9 +23,9 @@ def load_professions():
 
 def get_student_by_pk(pk):
     """
-
-    :param pk:
-    :return:
+    Returns student name and student skills as tuple by student ID
+    :param pk: student ID
+    :return: tuple of values student_name and list of students_skills
     """
     students = load_students()
     for i in range(0, len(students)):
@@ -39,9 +39,9 @@ def get_student_by_pk(pk):
 
 def get_profession_by_title(title):
     """
-
-    :param title:
-    :return:
+    Returns profession skills by profession title.
+    :param title: title of profession
+    :return: list of profession skills
     """
     professions = load_professions()
     for i in range(0, len(professions)):
@@ -53,10 +53,10 @@ def get_profession_by_title(title):
 
 def check_fitness(student, profession):
     """
-
-    :param student:
-    :param profession:
-    :return:
+    Returns a dictionary of student skill suitability and job requirements.
+    :param student: list of student skills
+    :param profession: list of profession requirements
+    :return: dictionary of suitability
     """
     fitness = {}
     student_skills = set(student)
