@@ -24,14 +24,17 @@ def load_professions():
 def get_student_by_pk(pk):
     """
 
-    :param pk: 
-    :return: 
+    :param pk:
+    :return:
     """
     students = load_students()
-
-    student_name = students[pk-1]['full_name']
-    student_skills = students[pk - 1]['skills']
-    return student_name, student_skills
+    for i in range(0, len(students)):
+        if pk == students[i]['pk']:
+            student_name = students[pk-1]['full_name']
+            student_skills = students[pk - 1]['skills']
+            return student_name, student_skills
+    print("У нас нет такого студента")
+    quit()
 
 
 def get_profession_by_title(title):
@@ -43,11 +46,19 @@ def get_profession_by_title(title):
     professions = load_professions()
 
     for i in range(0, len(professions)):
-        if title in professions[i]['title']:
+        if title == professions[i]['title']:
             return professions[i]['skills']
+    print("У нас нет такой специальности")
+    quit()
 
 
 def check_fitness(student, profession):
+    """
+
+    :param student:
+    :param profession:
+    :return:
+    """
     fitness = {}
     student_skills = set(student)
     profession_skills = set(profession)
