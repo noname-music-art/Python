@@ -16,4 +16,3 @@ for question in questions:
     question.user_answer = input()
     print(question.user_answer, question.correct_answer)
     print(question.build_feedback())
-
