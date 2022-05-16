@@ -8,7 +8,7 @@ from class_question import *
 
 def random_question():
     """
-    Gets data from question.json file in folder Data
+    Gets data from question.json file in folder data
     store as list of question and return shuffled list
     :return: shuffled(list[Question])
     """
