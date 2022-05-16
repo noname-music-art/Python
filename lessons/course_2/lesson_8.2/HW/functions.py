@@ -14,7 +14,7 @@ def random_question():
     """
     questions = []
 
-    with open('data/questions.json', encoding='utf-8') as f:
+    with open('Data/questions.json', encoding='utf-8') as f:
         raw_json = f.read()
         json.loads(raw_json)
 
