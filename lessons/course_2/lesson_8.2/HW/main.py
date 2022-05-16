@@ -1,18 +1,25 @@
-import json
-from class_question import *
+# Import functions
+from functions import *
 
-with open('data/questions.json', encoding='utf-8') as f:
-    raw_json = f.read()
-    json.loads(raw_json)
+# Get shuffled questions
+questions = random_question()
 
-questions = []
-
-for question in json.loads(raw_json):
-    questions.append(Question(question["q"], int(question["d"]), question["a"]))
-
+# Asks a questions to the user, gets the user's answer for each question,
+# marks them as asked, checks and prints feedback with a preliminary result.
 for question in questions:
+
+    # Ask question
     print(question.build_question())
+
+    # Get user answer
+    user_answer = input()
+    question.user_answer = user_answer
+
+    # Mark question as asked
     question.is_asked = True
-    question.user_answer = input()
-    print(question.user_answer, question.correct_answer)
+
+    # Print feedback on user answer
     print(question.build_feedback())
+
+# Print statistic for all questions
+print(statistic(questions))
