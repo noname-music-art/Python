@@ -11,4 +11,4 @@ class BasicWord:
 
     # подсчет количества под-слов (вернет int).
     def word_count(self):
-        pass
+        return len(self.allowed_word_list)
