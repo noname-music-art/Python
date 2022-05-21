@@ -1,3 +1,7 @@
+import requests
+response = requests.get("https://jsonkeeper.com/b/NIAO")
+
+
 class BasicWord:
     # Создайте класс `BasicWord` в отдельном файле. Этот класс будет содержать в себе:
     # **Поля:**
@@ -17,5 +21,3 @@ class BasicWord:
     # подсчет количества под-слов (вернет int).
     def word_count(self):
         pass
-
-
