@@ -7,8 +7,6 @@ class BasicWord:
 
     # проверка введенного слова в списке допустимых под-слов (вернет bool),
     def word_check(self):
-        if self.user_word == "стоп" or self.user_word == "stop":
-            exit()
         return self.user_word in self.allowed_word_list
 
     # подсчет количества под-слов (вернет int).
