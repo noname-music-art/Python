@@ -19,6 +19,9 @@ for step in range(0, word.word_count()):
               f"Вы угадали {player.correct_words()} {ending(player.correct_words())}!")
         exit()
 
+    elif player.check_word(word.user_word):
+        print("Вы уже называли это слово")
+
     elif word.word_check():
         player.add_word(word.user_word)
         print("Верно")

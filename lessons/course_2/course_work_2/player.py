@@ -13,6 +13,5 @@ class Player:
         self.used_words.append(user_word)
 
     # проверка использования данного слова до этого (возвращает bool)
-    # нахуй оно? не используется же.
     def check_word(self, user_word):
         return user_word in self.used_words
