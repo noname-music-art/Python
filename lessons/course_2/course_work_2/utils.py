@@ -1,6 +1,6 @@
 import requests
 import random
-from BasicWord import *
+from basic_word import *
 
 
 def load_random_word(url):
