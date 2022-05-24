@@ -1,3 +1,5 @@
+import json
+
 import requests
 import random
 from basic_word import *
@@ -5,6 +7,14 @@ from basic_word import *
 
 def load_random_word(url):
     response = requests.get(url)
+
+    if response.status_code != 200:
+        print("Не возможно получить данные для игры. Проверьте URL.")
+        exit()
+    if response.headers['Content-Type'] != 'application/json':
+        print("Получены странные данные. Проверьте URL")
+        exit()
+
     response_json = response.json()
     words = []
 
@@ -13,6 +23,8 @@ def load_random_word(url):
 
     return random.choice(words)
 
+
+#
 
 def ending(correct_answers):
     """

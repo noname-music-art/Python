@@ -7,7 +7,7 @@ class BasicWord:
 
     # проверка введенного слова в списке допустимых под-слов (вернет bool),
     def word_check(self):
-        return self.user_word in self.allowed_word_list
+        return self.user_word.lower() in self.allowed_word_list
 
     # подсчет количества под-слов (вернет int).
     def word_count(self):
