@@ -8,9 +8,8 @@ class Player:
     def correct_words(self):
         return len(self.correct_user_words)
 
-    def add_word(self, user_word):
-        self.used_words.append(user_word)
+    def add_word(self, word_to_add):
+        self.used_words.append(word_to_add)
 
-    # проверка использования данного слова до этого (возвращает bool)
-    def check_word(self, user_word):
-        return user_word in self.used_words
+    def check_word(self, word_for_verification):
+        return word_for_verification in self.used_words
