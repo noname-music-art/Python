@@ -4,11 +4,9 @@ class Player:
         self.user_name = user_name
         self.used_words = []
 
-    # получение количества слов (возвращает int)
     def correct_words(self):
         return len(self.used_words)
 
-    # добавление слова в использованные слова (ничего не возвращает)
     def add_word(self, user_word):
         self.used_words.append(user_word)
 

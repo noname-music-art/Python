@@ -5,10 +5,8 @@ class BasicWord:
         self.allowed_word_list = allowed_word_list
         self.user_word = str
 
-    # проверка введенного слова в списке допустимых под-слов (вернет bool),
     def word_check(self):
         return self.user_word.lower() in self.allowed_word_list
 
-    # подсчет количества под-слов (вернет int).
     def word_count(self):
         return len(self.allowed_word_list)
