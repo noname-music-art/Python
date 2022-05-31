@@ -4,35 +4,40 @@ from basic_word import *
 
 
 def load_random_word(url):
+    """
+    Function get random quiz-word from JSON data from Internet.
+
+    :param url: url with JSON data
+    :return: exemplar of class BasicWord
+    """
     try:
         response = requests.get(url, timeout=1)
+        if response.status_code != 200:
+            print("Не возможно получить данные для игры. Проверьте URL.")
+            exit()
         response_json = response.json()
-        words = []
+        quiz_words = []
 
-        for word in response_json:
-            words.append(BasicWord(word["word"], word["subwords"]))
+        for quiz_word in response_json:
+            quiz_words.append(BasicWord(quiz_word["word"], quiz_word["subwords"]))
 
-        return random.choice(words)
+        return random.choice(quiz_words)
 
     except requests.exceptions.ConnectionError as e:
-        print("Check your Internet connection")
+        print("Не возможно получить данные для игры. Проверьте наличие подключения к Internet")
+        quit()
     except requests.exceptions.JSONDecodeError as e:
-        print("Мы получили что-то странное, это не JSON")
-
-
-    # if response.status_code != 200:
-    #     print("Не возможно получить данные для игры. Проверьте URL.")
-    #     exit()
-    # if response.headers['Content-Type'] != 'application/json':
-    #     print("Получены странные данные. Проверьте URL")
-    #     exit()
-
-
+        print("Мы получили что-то странное, это не похоже JSON")
+        quit()
+    except requests.exceptions.InvalidSchema as e:
+        print("Проверьте правильность указания URL")
+        quit()
 
 
 def ending(correct_answers):
     """
     Gets a numeral and returns a noun with the correct ending
+
     :param correct_answers: int
     :return: str
     """
